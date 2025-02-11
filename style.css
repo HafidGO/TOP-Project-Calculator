@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+
+#containerCalculator{
+display: flex;
+justify-content: center;
+margin-top: 8%;
+margin-bottom: 8%;
+}
+
+#containerDisplay, #containerButtons, .button{
+background-color: rgb(39, 39, 46) ;
+}
+
+#containerMain{
+    display: flex;
+    flex-flow: wrap;
+    width: 450px;
+    height: 650px;
+}
+
+#containerDisplay{
+    color: white;
+    font-size: 80px;
+    text-align: end;
+    /* vertical-align: bottom; */
+    width: 100%;
+    height: 25%;
+}
+
+#containerButtons{
+    display: flex;
+    flex-flow: wrap ;
+    width: 100%;
+    height: 75%;
+    /* gap: 10px; */ /*Not being used*/
+    justify-content: space-between;
+    padding: 0 10px 10px; /* Adds spacing on the left and right sides */
+}
+
+.button{
+    height: calc(20% - 10px);
+    width: calc(25% - 10px);
+    border-radius: 10%;
+    font-size: 25px;
+}
+
+.button.gray{
+    color: gray;
+}
+
+.button.white{
+    color: white;
+}
+
+
+
+
