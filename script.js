@@ -1,8 +1,3 @@
-//Expect first number
-//Listen for an operation
-//Expect second number
-//After pressing the equal button the operation shall be executed.
-
 //There needs to be a function that listens for number input until the user presses a button other than "number", this would mark the selection of the operation type and the start of the second number. The button would mark where this number ends and would begin the function that performs the operation.
 
 var displayedValue = (document.getElementById("containerDisplay"));
@@ -15,19 +10,32 @@ buttons.forEach(button =>{
             displayedValue.innerText += userInput;
         }
         else if((e.target.classList).contains('operator')){
-            (e.target.id == "C") ? displayedValue.innerText = 0 
-            // (e.target.id == "+/-") ? asas :
+            console.log(`Event id: ${e.target.id}`);
+            (e.target.id == "clearButton") ? clearDisplay():
+            (e.target.id == "plusMinusButton") ? plusMinus():
+            (e.target.id == "percentageButton") ? percentage():
+            (e.target.id == "divisionButton") ? divide():
+            (e.target.id == "multiplicationButton") ? multiply():
+            (e.target.id == "subtractionButton") ? subtract():
+            (e.target.id == "additionButton") ? add():
+            clearDisplay();
+
         }
     })
 });
 
-// const buttonChoice = document.querySelectorAll(".button").innerText;
 
+function clearDisplay(){
+    displayedValue.innerText = "";
+};
 
+function plusMinus(){
+    displayedValue.innerText = result;
+};
 
-// let a = ;
-// let b = ;
-// let operationChoice = ;
+function percentage(){
+
+};
 
 
 function add(a,b){
@@ -45,4 +53,7 @@ function multiply(a,b){
 function divide(a,b){
     return a / b; 
 }
+
+
+
 
