@@ -1,59 +1,42 @@
-//There needs to be a function that listens for number input until the user presses a button other than "number", this would mark the selection of the operation type and the start of the second number. The button would mark where this number ends and would begin the function that performs the operation.
+const display = (document.getElementById("display"));
+var buttons = Array.from(document.getElementsByTagName("button"));
 
-var displayedValue = (document.getElementById("containerDisplay"));
-var buttons = Array.from(document.getElementsByClassName("button"));
+function clearDisplay(){
+    display.value = "";
+};
+
+function appendToDisplay(input){
+    display.value += input;
+};
+
+function plusMinusButton(){
+        display.value = -(display.value);
+};
+
+function calculate(){
+    display.value = math.evaluate(display.value);
+};
+
+function backSpace(){
+    display.value = display.value.slice(0,-1);
+};
 
 buttons.forEach(button =>{
     button.addEventListener("click", (e) => {
-        if ((e.target.classList).contains('number')){
-            let userInput = e.target.innerText;
-            displayedValue.innerText += userInput;
-        }
-        else if((e.target.classList).contains('operator')){
-            console.log(`Event id: ${e.target.id}`);
-            (e.target.id == "clearButton") ? clearDisplay():
-            (e.target.id == "plusMinusButton") ? plusMinus():
-            (e.target.id == "percentageButton") ? percentage():
-            (e.target.id == "divisionButton") ? divide():
-            (e.target.id == "multiplicationButton") ? multiply():
-            (e.target.id == "subtractionButton") ? subtract():
-            (e.target.id == "additionButton") ? add():
-            clearDisplay();
+            if(e.target.textContent == "C"){
+                clearDisplay();
+            }
+            else if(e.target.textContent == "+/-"){
+                plusMinusButton();
 
-        }
-    })
-});
-
-
-function clearDisplay(){
-    displayedValue.innerText = "";
-};
-
-function plusMinus(){
-    displayedValue.innerText = result;
-};
-
-function percentage(){
-
-};
-
-
-function add(a,b){
-    return a + b; 
-}
-
-function subtract(a,b){
-    return a - b; 
-}
-
-function multiply(a,b){
-    return a * b; 
-}
-
-function divide(a,b){
-    return a / b; 
-}
-
-
-
-
+            }
+            else if(e.target.textContent == "del"){
+                backSpace();            
+            }
+            else if(e.target.textContent == "="){
+                calculate();
+            }
+            else{
+                appendToDisplay(e.target.textContent);
+            }
+})});
