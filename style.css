@@ -13,27 +13,26 @@ margin-top: 8%;
 margin-bottom: 8%;
 }
 
-#containerDisplay, #containerButtons, .button{
-background-color: rgb(39, 39, 46) ;
-}
-
-#containerMain{
+#calculator{
     display: flex;
     flex-flow: wrap;
     width: 450px;
     height: 650px;
 }
 
-#containerDisplay{
+#display{
     color: white;
-    font-size: 80px;
+    font-size: 5rem;
     text-align: end;
     /* vertical-align: bottom; */
     width: 100%;
     height: 25%;
-    padding-right: 15px;
+    /* padding-right: 5px; */
+    border-style: solid;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    border-color: hsl(240, 8%, 17%);
+    background-color: hsl(240, 8%, 17%) ;
 }
 
 #containerButtons{
@@ -46,25 +45,50 @@ background-color: rgb(39, 39, 46) ;
     padding: 0 10px 10px; /* Adds spacing on the left and right sides */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    background-color: hsl(240, 8%, 17%) ;
 }
 
-.button{
+button{
     height: calc(20% - 10px);
     width: calc(25% - 10px);
     border-radius: 10%;
     font-size: 25px;
-}
-
-.button.operator{
-    color: gray;
-}
-
-.button.number{
+    background-color: hsl(0, 0%, 27%) ;
     color: white;
+    border-style: solid;
+
+}
+
+button:hover{
+    background-color: hsl(0, 0%, 37%) ;
+}
+
+button:active{
+    background-color: hsl(0, 0%, 47%);
+}
+
+.operator-btn{
+    background-color: hsl(35, 100%, 50%) ;
+}
+
+.operator-btn:hover{
+    background-color: hsl(35, 100%, 55%) ;
+}
+
+.operator-btn:active{
+    background-color: hsl(35, 100%, 60%) ;
+}
+
+.del{
+    background-color: hsl(0, 92%, 38%) ;
+}
+
+.del:hover{
+    background-color: hsl(0, 92%, 48%) ;
+}
+.del:active{
+    background-color: hsl(0, 92%, 58%) ;
 }
 
 
 
-/* console.log(`display: ${displayedValue.innerText}`)
-console.log(`typeof display: ${typeof(displayedValue.innerText)}`)
-console.log(`typeof user input: ${typeof(userInput)}`) */
